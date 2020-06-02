@@ -44,6 +44,8 @@ class OIDCAuthRequestView(View):
             'client_id': oidc_rp_settings.CLIENT_ID,
             'redirect_uri': request.build_absolute_uri(reverse('oidc_auth_callback')),
         })
+        if oidc_rp_settings.PROMPT:
+            authentication_request_params['prompt'] = oidc_rp_settings.PROMPT
 
         # States should be used! They are recommended in order to maintain state between the
         # authentication request and the callback.

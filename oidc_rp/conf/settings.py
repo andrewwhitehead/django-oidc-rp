@@ -62,6 +62,9 @@ STATE_LENGTH = getattr(settings, 'OIDC_RP_STATE_LENGTH', 32)
 # The 'SCOPES' setting defines the OpenID Connect scopes to request during login.
 SCOPES = getattr(settings, 'OIDC_RP_SCOPES', 'openid email')
 
+# The 'PROMPT' setting defines the OpenID Connect prompt to request during login.
+PROMPT = getattr(settings, 'OIDC_RP_PROMPT', None)
+
 # The 'USE_NONCE' setting defines whether or not nonces should be used when forging authorization
 # requests. Nonces are used to mitigate replay attacks.
 USE_NONCE = getattr(settings, 'OIDC_RP_USE_NONCE', True)
